@@ -62,3 +62,17 @@ bind -T copy-mode-vi L send-keys -X end-of-line
 bind -T copy-mode-vi K send-keys -N 5 Up
 bind -T copy-mode-vi J send-keys -N 5 Down
 bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe "wl-copy"
+
+# --- Battery Optimizations ---
+# Disable status bar when no clients attached (stops background polling)
+set-hook -g client-attached 'set -g status on'
+set-hook -g client-detached 'set -g status off'
+
+# Increase status update interval to reduce polling (default is 10s)
+set -g status-interval 600
+
+# Disable activity monitoring (saves polling overhead)
+set -g monitor-activity off
+
+# Minimal status bar - only hostname (force override)
+set -g status-right '#(whoami)@#h '  #!important
