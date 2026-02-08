@@ -48,8 +48,8 @@ bind Tab last-window
 bind m run "tmux set -g mouse #{?mouse,off,on}" \; display 'mouse #{?mouse,on,off}'
 
 # Custom bindings for external windows
-bind-key n run-shell -b "nohup foot --working-directory=#{pane_current_path} tmux >/dev/null 2>&1 &"
-bind-key o run-shell -b "nohup foot --working-directory=#{pane_current_path} tmux new-session yazi >/dev/null 2>&1 &"
+bind-key n run-shell -b "kitty -1 --detach -d '#{pane_current_path}' tmux"
+bind-key o run-shell -b "kitty -1 --detach -d '#{pane_current_path}' tmux new-session yazi"
 
 # copy mode bindings
 bind Enter copy-mode
@@ -65,8 +65,8 @@ bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe "wl-copy"
 
 # --- Battery Optimizations ---
 # Disable status bar when no clients attached (stops background polling)
-set-hook -g client-attached 'set -g status on'
-set-hook -g client-detached 'set -g status off'
+# set-hook -g client-attached 'set -g status on'
+# set-hook -g client-detached 'set -g status off'
 
 # Increase status update interval to reduce polling (default is 10s)
 set -g status-interval 600
