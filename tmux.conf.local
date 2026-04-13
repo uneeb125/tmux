@@ -22,6 +22,9 @@ unbind C-a
 # custom reload binding
 bind r source-file ~/.config/tmux/tmux.conf \; display 'config reloaded'
 
+# ssh clipboard
+set -s set-clipboard on
+
 # split bindings
 bind - split-window -v
 bind _ split-window -h
