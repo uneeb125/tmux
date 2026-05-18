@@ -87,7 +87,7 @@ set -g set-titles-string "#h: #W"
 set -g status-right '#(whoami)@#h '  #!important
 
 # Remove uptime from status-left (default shows: ❐ #S | ↑ with uptime)
-tmux_conf_theme_status_left=' ❐ #S '
+tmux_conf_theme_status_left=' #{prefix}❐ #S '
 
 # --- Plugins (TPM) ---
 set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins/'
