@@ -63,7 +63,7 @@ bind-key n run-shell -b "kitty -1 --detach -d '#{pane_current_path}' tmux"
 bind-key o run-shell -b "kitty -1 --detach -d '#{pane_current_path}' tmux new-session yazi"
 
 # Edit History Browser
-bind-key e run-shell -b "$HOME/.config/opencode/.opencode/edits-cli.sh"
+# bind-key e run-shell -b "$HOME/.config/opencode/.opencode/edits-cli.sh"
 
 # copy mode bindings
 bind Enter copy-mode
@@ -107,3 +107,5 @@ bind f run-shell -b "~/.tmux/plugins/tmux-fzf/tmux-fzf.sh"
 
 # Initialize TPM (keep at the very bottom)
 run '~/.tmux/plugins/tpm/tpm'
+
+set -g mouse on
