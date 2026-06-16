@@ -109,3 +109,6 @@ bind f run-shell -b "~/.tmux/plugins/tmux-fzf/tmux-fzf.sh"
 run '~/.tmux/plugins/tpm/tpm'
 
 set -g mouse on
+
+# Tell tmux that kitty supports passthrough (for OSC notifications, images, etc.)
+set -as terminal-features ',xterm-kitty*:passthrough'
